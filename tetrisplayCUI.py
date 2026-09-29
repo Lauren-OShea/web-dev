@@ -10,7 +10,6 @@ import sys
 from turtle import left
 
 
-
 key_pressed = None    # This is a global variable.
 
 def clear_the_terminal():
@@ -59,21 +58,19 @@ def process_left_press(key):
         key_pressed = key.char
     except AttributeError:
         key_pressed = str(key)
-
-def show_dropping_block(grid, column_number):
+        
+def show_dropping_block(grid, column_number, row):
     """Given a grid and a column to drop into, simulate a visual drop of a box."""
 
-    for row in range(_ROWS):
-        grid[column_number][row] = _BLOCK
-        display_grid(grid)
-            
-        if process_left_press(left):
-            grid[column_number - 1][row] = _BLOCK
-        display_grid(grid)
-        time.sleep(_INTERVAL)
-        clear_the_terminal()
- 
 
+    grid[column_number][row] = _BLOCK
+    display_grid(grid)
+    time.sleep(_INTERVAL)
+    clear_the_terminal()
+    grid[column_number][row] = _BLANK
+    display_grid(grid)
+    time.sleep(_INTERVAL)
+    clear_the_terminal()
 
 
 
