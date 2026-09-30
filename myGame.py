@@ -27,7 +27,7 @@ listener.start()
 
 col = random.randint(0, tetrisplayCUI._COLUMNS - 1)
 
-for row in range(tetrisplayCUI._ROWS):
+for row in range(tetrisplayCUI._ROWS):  # gets key pressed and changes the block 
     if key_pressed:
         print(f"We got this key: {key_pressed}.")
         if key_pressed == "a":
@@ -39,7 +39,6 @@ for row in range(tetrisplayCUI._ROWS):
             print("moved")
         
         
-    
         if key_pressed == "q":
             print("we're done.")
             break
@@ -47,6 +46,10 @@ for row in range(tetrisplayCUI._ROWS):
         
         key_pressed = None
     tetrisplayCUI.show_dropping_block(g, col, row)
+
+if(row == tetrisplayCUI._ROWS - 1):
+    g = tetrisplayCUI.drop_block(g, col)
+    tetrisplayCUI.display_grid(g)
 
 
 
