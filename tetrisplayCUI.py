@@ -52,7 +52,7 @@ def move_left(grid, column_number):
         print("moving left")
         
         
-def process_left_press(key):
+def process_press(key):
     global key_pressed
     try:
         key_pressed = key.char
@@ -72,6 +72,16 @@ def show_dropping_block(grid, column_number, row):
     time.sleep(_INTERVAL)
     clear_the_terminal()
 
+def block_full(grid, column_number,row):
+    """Given a grid and a column number, return True if the column is full, False otherwise."""
+    if grid[column_number][row + 1] == _BLOCK:
+        return True
+    return False    
 
-
+def grid_full(grid):
+    """Given a grid, return True if the grid is full, False otherwise."""
+    for c in range(_COLUMNS):
+        if _BLANK in grid[c]:
+            return False
+    return True
 
