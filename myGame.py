@@ -2,6 +2,12 @@ import tetrisplayCUI
 import time
 import random
 
+from textual.app import App, ComposeResult
+from textual.containers import HorizontalGroup, VerticalScroll
+from textual.reactive import reactive
+from textual.widgets import Button, Digits, Footer, Header
+
+
 g = tetrisplayCUI.build_clean_grid()
 
 
@@ -58,7 +64,7 @@ while (key_pressed != "q"):
             
         tetrisplayCUI.show_dropping_block(g, col, row)
             
-        listener.stop()
+    listener.stop()
 
     if tetrisplayCUI.grid_full(g) == True:
         print("grid is full, game over.")
