@@ -1,7 +1,7 @@
 GameScreen {
     layout: horizontal;
     background: $boost;
-    height: 5;
+    height: 15;
     min-width: 50;
     margin: 1;
     padding: 1;
@@ -10,6 +10,6 @@ GameScreen {
 TetrisApp {
     text-align: center;
     color: $foreground-muted;   
-    height: 3;
+    height: 15;
 }
 
